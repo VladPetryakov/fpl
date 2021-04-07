@@ -38,15 +38,15 @@ public class Fraction implements Serializable{
             res.num *= -1;
             res.den *= -1;
         }
+		return res;
     }
     
-    public Fraction Mult(Fraction right) 
-    {
-        Fraction t = new Fraction();
-        t.num = this.num * right.num;
-        t.den = this.den * right.den;
-        t.Sokr();
-        return t;
+    public Fraction Mult(Fraction a, Fraction b) {
+        Fraction res = new Fraction();
+        res.num = a.num * b.num;
+        res.den = a.den * b.den;
+        Sokr(res);
+        return res;
     }
 
     public Fraction MultFractOnInt(int right) {
