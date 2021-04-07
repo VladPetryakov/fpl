@@ -26,20 +26,17 @@ public class Fraction implements Serializable{
 	return a + b;
     }
     
-    public void Sokr () {
-        int ev;
-        Fraction t = new Fraction();
+    public Fraction Sokr (Fraction f) {
+        int gcd;
+        Fraction res = new Fraction();
 
-        t.num = Math.abs(this.num);
-        t.den = Math.abs(this.den);
+        gcd = GCD (Math.abs(f.num), Math.abs(f.den));
+        res.num = f.num / gcd;
+        res.den = f.den / gcd;
 
-        ev = GCD (t.num, t.den);
-        this.num /= ev;
-        this.den /= ev;
-
-        if (this.den < 0) {
-            this.num *= -1;
-            this.den *= -1;
+        if (res.den < 0) {
+            res.num *= -1;
+            res.den *= -1;
         }
     }
     
