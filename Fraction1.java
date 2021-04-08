@@ -56,22 +56,14 @@ public class Fraction implements Serializable{
         return res;
     }
 
-    public Fraction Add(Fraction right) {
-        Fraction t = new Fraction();
-        int td = right.den;
-        Fraction fr = new Fraction();
+    public Fraction Add(Fraction a, Fraction b) {
+        Fraction res = new Fraction();
 
-        this.Sokr();
+        res.num = a.num * b.den + b.num * a.den;
+        res.den = b.den * a.den;
 
-        fr.num = right.num * this.den;
-        fr.den = right.den * this.den;
+        Sokr(res);
 
-        t.den = this.den * td;
-        t.num = this.num * td;
-        t.num = t.num + fr.num;
-
-        t.Sokr();
-
-        return t;
+        return res;
     }
 };
