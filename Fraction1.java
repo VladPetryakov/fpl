@@ -29,7 +29,6 @@ public class Fraction implements Serializable{
     public Fraction Sokr (Fraction f) {
         int gcd;
         Fraction res = new Fraction();
-
         gcd = GCD (Math.abs(f.num), Math.abs(f.den));
         res.num = f.num / gcd;
         res.den = f.den / gcd;
@@ -58,12 +57,9 @@ public class Fraction implements Serializable{
 
     public Fraction Add(Fraction a, Fraction b) {
         Fraction res = new Fraction();
-
         res.num = a.num * b.den + b.num * a.den;
         res.den = b.den * a.den;
-
         Sokr(res);
-
         return res;
     }
 };
