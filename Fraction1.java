@@ -49,11 +49,11 @@ public class Fraction implements Serializable{
         return res;
     }
 
-    public Fraction MultFractOnInt(int right) {
-        Fraction t = new Fraction();
-        t.den = this.den;
-        t.num = this.num * right;
-        return t;
+    public Fraction MultFractOnInt(Fraction f, int number) {
+        Fraction res = new Fraction();
+        res.den = f.den;
+        res.num = f.num * number;
+        return res;
     }
 
     public Fraction Add(Fraction right) {
